@@ -12,6 +12,7 @@ module.exports = {
     path: path.resolve(__dirname, "src"),
     filename: "[name][contenthash].js",
     clean: true,
+    assetModuleFilename:'[name][ext]'
   },
 
   devtool: "source-map",
@@ -22,7 +23,7 @@ module.exports = {
     },
 
     compress: true,
-    port: 1500,
+    port: 3000,
     open: true,
     hot: true,
     historyApiFallback: true,
@@ -35,16 +36,9 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
 
-      // so it can be compactible for older browsers
       {
-        test: /\.m?js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env"],
-          },
-        },
+        test: /\.(jpeg|jpg|png|gif|tiff|psd|pdf|eps|ai)$/i,
+        type: "asset/resource",
       },
     ],
   },
