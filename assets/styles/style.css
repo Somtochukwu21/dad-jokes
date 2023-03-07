@@ -55,3 +55,12 @@ h3 {
     font: 20px bold, 'roboto';
     margin: auto;
 }
+
+.attr{
+    font-size: 10px;
+    color:white;
+    text-align: center;
+    margin-top: 14em;
+
+}
+.attr::first-letter{text-transform: capitalize;}
